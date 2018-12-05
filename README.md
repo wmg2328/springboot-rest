@@ -43,6 +43,7 @@ Use curl(or any other tool) to test following API
       curl -v localhost:8080/book/1
       curl -X POST localhost:8080/book -H 'Content-type:application/json' -d '{"title": "Spring Boot in Action", "author": "Craig Walls", "price": 40.23}'
       curl -X PUT localhost:8080/book/1 -H 'Content-type:application/json' -d '{"title":"Advanced API Security","author":"Prabath Siriwardena","price":54.99}'
+      curl -X PATCH localhost:8080/book/1 -H 'Content-type:application/json' -d '{"price":54.99}'
       curl -X DELETE localhost:8080/book/3
 
     
