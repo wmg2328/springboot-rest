@@ -47,6 +47,26 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    public Book patch(Long id, Book domainObject) {
+        return bookRepository.findById(id).map(fetched -> {
+
+            // TODO This should ne replaced with JSON Patch (https://tools.ietf.org/html/rfc6902)
+            if (domainObject.getAuthor() != null) {
+                fetched.setAuthor(domainObject.getAuthor());
+            }
+
+            if (domainObject.getTitle() != null) {
+                fetched.setTitle(domainObject.getTitle());
+            }
+
+            if (domainObject.getPrice() != 0.0f) {
+                fetched.setPrice(domainObject.getPrice());
+            }
+            return bookRepository.save(fetched);
+        }).orElseThrow(() -> BookNotFoundException.instance(String.format("Book with id %s not found", id.toString())));
+    }
+
+    @Override
     public void delete(Long id) {
         bookRepository.deleteById(id);
     }

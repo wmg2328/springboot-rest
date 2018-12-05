@@ -36,6 +36,11 @@ public class BookController {
         return ResponseEntity.created(URI.create("/book")).body(bookService.update(id, book));
     }
 
+    @PatchMapping(value = "/{id}")
+    public ResponseEntity<?> patch(@PathVariable Long id, @RequestBody Book book) {
+        return ResponseEntity.ok(bookService.patch(id, book));
+    }
+
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Book> delete(@PathVariable Long id) {
         bookService.delete(id);
