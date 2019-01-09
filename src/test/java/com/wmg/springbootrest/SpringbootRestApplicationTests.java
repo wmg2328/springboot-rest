@@ -13,4 +13,9 @@ public class SpringbootRestApplicationTests {
     public void contextLoads() {
     }
 
+    @Test
+    public void testMain(){
+        SpringbootRestApplication.main(new String[]{});
+    }
+
 }
