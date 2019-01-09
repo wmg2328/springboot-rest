@@ -1,4 +1,7 @@
 # springboot-rest
+[![Build Status](https://travis-ci.org/wmg2328/springboot-rest.svg?branch=master)](https://travis-ci.org/wmg2328/springboot-rest)
+[![codecov](https://codecov.io/gh/wmg2328/springboot-rest/branch/master/graph/badge.svg)](https://codecov.io/gh/wmg2328/springboot-rest)
+
 This project is a basic spring boot application with simple CURD operations exposed as REST services
 
 ## 🔨 Building from source
